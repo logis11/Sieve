@@ -40,7 +40,7 @@ from collections import Counter
 from dataclasses import dataclass
 from enum import Enum
 
-from scovillain.verdict.contract import Answer, unknown
+from sieve.verdict.contract import Answer, unknown
 
 
 class FieldKind(str, Enum):

@@ -16,7 +16,7 @@ from typing import Iterable, Protocol
 
 import networkx as nx
 
-from scovillain.ir.schema import (
+from sieve.ir.schema import (
     CallResolution, EdgeKind, EdgeLossSite, Module, Node,
 )
 

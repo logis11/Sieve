@@ -11,9 +11,9 @@ contract:
 
 from __future__ import annotations
 
-from scovillain.dispatch.frontier import enumerate_frontier
-from scovillain.graph.store import NetworkxStore
-from scovillain.verdict.contract import (
+from sieve.dispatch.frontier import enumerate_frontier
+from sieve.graph.store import NetworkxStore
+from sieve.verdict.contract import (
     Answer, not_refuted, refuted, refuted_modulo, unknown,
 )
 

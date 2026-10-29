@@ -55,7 +55,7 @@ errs toward MODULO, never toward a false REFUTED):
   CODEPTR_ESCAPE, which is why the escape detector is the load-bearing one.
 
 CLI:
-    python -m scovillain.frontends.pe_capstone <image.sys> [image.pdb] [--json out]
+    python -m sieve.frontends.pe_capstone <image.sys> [image.pdb] [--json out]
 """
 
 from __future__ import annotations
@@ -68,7 +68,7 @@ import uuid
 from dataclasses import dataclass
 from typing import Optional
 
-from scovillain.ir.schema import (
+from sieve.ir.schema import (
     CallResolution, Edge, EdgeKind, EdgeLossKind, EdgeLossSite, Module, Node,
     NodeKind,
 )

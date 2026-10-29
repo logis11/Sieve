@@ -25,9 +25,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from scovillain.graph.store import NetworkxStore
-from scovillain.ir.schema import EdgeLossKind, EdgeLossSite
-from scovillain.verdict.contract import FrontierSite
+from sieve.graph.store import NetworkxStore
+from sieve.ir.schema import EdgeLossKind, EdgeLossSite
+from sieve.verdict.contract import FrontierSite
 
 
 # Sites of these kinds carrying zero known targets are the conservative core:

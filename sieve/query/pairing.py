@@ -61,10 +61,10 @@ from collections import Counter
 from dataclasses import dataclass, field
 from enum import Enum
 
-from scovillain.dispatch.frontier import enumerate_frontier
-from scovillain.graph.store import KNOWN_CALL, NetworkxStore
-from scovillain.ir.schema import EdgeKind
-from scovillain.verdict.contract import (
+from sieve.dispatch.frontier import enumerate_frontier
+from sieve.graph.store import KNOWN_CALL, NetworkxStore
+from sieve.ir.schema import EdgeKind
+from sieve.verdict.contract import (
     Answer, not_refuted, refuted, refuted_modulo, unknown,
 )
 
@@ -151,7 +151,7 @@ class PairingReport:
         subject to the same guard as any other attribute read
         (`verdict/discriminator.py`): a label that would be emitted for a
         population where nothing varies is not a finding, it is a tautology."""
-        from scovillain.verdict.discriminator import FieldPopulation
+        from sieve.verdict.discriminator import FieldPopulation
         return FieldPopulation(name="pairing",
                                values=tuple(r.pairing.value for r in self.rows),
                                members=tuple(r.name for r in self.rows))

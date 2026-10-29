@@ -1,72 +1,43 @@
 ```
-   ███████╗ ██████╗ ██████╗ ██╗   ██╗██╗██╗     ██╗      █████╗ ██╗███╗   ██╗
-   ██╔════╝██╔════╝██╔═══██╗██║   ██║██║██║     ██║     ██╔══██╗██║████╗  ██║
-   ███████╗██║     ██║   ██║██║   ██║██║██║     ██║     ███████║██║██╔██╗ ██║
-   ╚════██║██║     ██║   ██║╚██╗ ██╔╝██║██║     ██║     ██╔══██║██║██║╚██╗██║
-   ███████║╚██████╗╚██████╔╝ ╚████╔╝ ██║███████╗███████╗██║  ██║██║██║ ╚████║
-   ╚══════╝ ╚═════╝ ╚═════╝   ╚═══╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
-                                                        the heat is in the reach
-⠀⠀⠀⠀⠀⢀⡠⠄⠀⠒⠒⠒⠀⠀⠀⠀⠤⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢀⠴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⣠⠆⠀⠀⣀⠀⠀⠀⠀⠀⣀⣤⠀⠀⠀⠀⠀⠀⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠑⠢⢀⠀⠀⠀⠀
-⠀⠊⡌⠀⠀⠀⣗⣆⣀⣤⣶⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⢰⠀⠀⠀⠀⠀⠀⠀⡠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠡⡀⠀⠀
-⢀⠗⠉⠀⠁⠀⠈⠉⠛⢿⣟⢀⡸⠿⠃⠀⠀⠀⠀⢀⠞⠨⡇⠀⠀⠀⠀⠀⠐⠁⠀⠀⠀⠀⠀⠀⠀⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠱⣄⠀
-⠸⡀⠀⢀⣠⠖⠂⢏⠉⢱⠒⡢⢄⠀⠀⠀⠀⠀⢠⠎⠀⣸⣶⡄⠀⠀⠀⠀⡇⠀⠀⠀⠀⢆⠀⠀⣼⣿⣿⣷⣤⡀⢀⢠⡅⠀⠀⠀⣻⢆
-⠀⠙⠴⣿⠇⠀⠀⣠⠭⢥⡜⢁⠀⠙⢢⡀⠀⠀⠀⠀⠚⡷⡁⠀⠀⠀⠀⠰⡷⡀⠀⠀⠀⢸⠢⠀⠻⢧⡀⢹⣿⡿⠓⠊⠀⠀⠠⢄⠃⡜
-⠀⠀⠀⠘⣄⠀⢰⠗⠉⠓⠓⠋⣠⣲⡶⠛⠀⠀⠀⠀⠀⡇⡹⡆⠀⠀⢠⡾⣳⠃⠀⠀⠀⠸⣼⠑⠢⠄⣈⣉⣁⠀⢠⠤⢄⡀⠀⠀⠙⡄
-⠀⠀⠀⠀⢸⠶⠤⢀⣀⣠⠴⠞⠋⣀⠠⡄⠀⠀⠀⠀⡴⠳⡀⠸⠀⢠⠋⠀⣿⡀⠀⠀⠀⢄⣳⣆⡀⠀⠐⢲⣝⣲⣛⢢⠀⡽⣄⠀⡠⠁
-⠀⠀⠀⠀⢸⡀⠀⠀⠁⠀⠀⠀⢘⣤⣠⠧⠤⠀⠒⠊⠀⠀⢳⠀⡆⡏⢀⠞⠁⠱⣄⠀⠀⠀⠉⠑⢌⡖⠒⠋⠀⠀⠈⣳⣷⠀⠉⠋⠀⠀
-⠀⠀⠀⠀⠀⠉⠶⠒⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡇⣿⢀⡁⠀⠀⠀⠈⠑⠦⢼⡉⠲⡄⠈⠓⠤⣀⡀⠀⣹⡇⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠪⠥⣀⢤⡄⠀⠀⠉⡚⠀⠀⠘⢧⣭⠷⠆⠀⠉⠉⠈⠑⠒⠤⣀⠀⠀⢀⠆⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠔⠊⠉⣠⡜⠀⠀⢀⠔⠉⠲⢄⠀⠀⢹⡳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡔⠁⠀⠈⠓⠪⡀⢣⡠⠒⠁⠀⠀⠀⠀⢹⠒⠀⡇⠈⠣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⠀⠀⠀⠀⠀⢸⡋⠀⠀⠀⠀⠀⣀⠀⠀⢇⠴⠃⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣄⡀⠀⢀⣀⡆⠙⠦⣀⡠⠔⠋⠁⠑⣄⢸⠀⠀⠀⠀⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠊⠁⠄⠀⠀⠀⠀⠙⢄⠀⠈⠀⠀⠀⠀⠀⠘⠖⢇⠀⢀⡰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢸⣷⣴⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢸⢋⢾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⡴⢡⢋⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠄⠀⠘⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⡜⢠⠇⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢀⡜⢀⠏⢀⠃⠀⠀⠀⠀⠀⠀⠀⢀⠉⠀⠀⠀⠀⠀⣀⡠⠔⡎⠀⠀⠀⠀⠀⠀⠀⠈⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢠⡞⠋⣉⡓⠦⡀⠀⠀⠀⠀⠀⠀⠀⡸⠙⠒⠒⠒⠋⠉⠀⠀⠀⢳⠀⠀⠀⠀⠀⢀⠀⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠈⢳⡶⠶⠮⠽⠾⠧⣄⡀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠀⠀⠈⠄⢰⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠉⠒⢤⣀⡀⠀⠀⠈⠑⠢⣄⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⠀⠀⠀⠀⠀⠀⠀⢠⣿⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⠀⠀⠀⠀⠀⠀⠀⣾⣿⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠣⣀⠀⠀⠀⡠⠔⠚⠛⠻⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠑⠛⠂⠀⠤⠤⠔⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+   ███████╗██╗███████╗██╗   ██╗███████╗
+   ██╔════╝██║██╔════╝██║   ██║██╔════╝
+   ███████╗██║█████╗  ██║   ██║█████╗  
+   ╚════██║██║██╔══╝  ╚██╗ ██╔╝██╔══╝  
+   ███████║██║███████╗ ╚████╔╝ ███████╗
+   ╚══════╝╚═╝╚══════╝  ╚═══╝  ╚══════╝
+                  a negative you can delete on
 ```
-# Scovillain
+# Sieve
 
 > A **falsification oracle** for binary vulnerability hunting. A hunting tool
-> (e.g. Huntail) finds candidate sinks; Scovillain turns each candidate into a
+> (e.g. Verdict) finds candidate sinks; Sieve turns each candidate into a
 > **reachability query** over a graph of the binary and answers one question —
 > *"can attacker-controlled input actually reach this, or can the candidate be
 > refuted?"* — so the caller can **drop false positives it can trust are dead.**
 >
 > The graph is an internal mechanism (a mathematical object, not a picture). The
 > product is the **verdict**, and its most important property is that a negative
-> is **sound**: an agent may delete a candidate on Scovillain's word.
+> is **sound**: an agent may delete a candidate on Sieve's word.
 
 ---
 
 ## What it is
 
-Scovillain is a **service, not a scanner.** It does not hunt for bugs — it
+Sieve is a **service, not a scanner.** It does not hunt for bugs — it
 *refutes* candidates that something else already found. It sits behind a hunting
 tool as a callable oracle:
 
 ```
-   Huntail (finds candidates)  ──candidate──▶  Scovillain  ──verdict──▶  Huntail
-   "here are 300 sinks"                        reachability /            "drop the
-                                               dataflow over the          refuted;
-                                               binary's graph             analyze
-                                                                          the rest"
+   Verdict  ──candidate──▶  Sieve  ──verdict──▶  Verdict
+   finds 300 sinks          reachability /       drop the refuted,
+                            dataflow over the    analyze the rest
+                            binary's graph
 ```
 
 Target scope: **one complex binary** (a monolithic service, driver, or firmware
 image component), not multi-binary firmware orchestration — that ground is
 already held by Karonte / SaTC / Operation Mango (see [`PRIOR_ART.md`](PRIOR_ART.md)).
-Scovillain's contribution is not a new detector; it is the **reusable, agent-
+Sieve's contribution is not a new detector; it is the **reusable, agent-
 queryable falsification layer** that sits behind one.
 
 Delivery: an **MCP server** so an LLM-driven hunting agent can call it as a tool.
@@ -77,13 +48,13 @@ is the integration surface for the agent case.)
 
 ## Why a negative must be sound (the one hard constraint)
 
-The caller *deletes* a candidate when Scovillain says "unreachable." So the cost
+The caller *deletes* a candidate when Sieve says "unreachable." So the cost
 of a wrong answer is asymmetric:
 
 - A false **"reachable"** → the caller wastes some analysis. Annoying.
 - A false **"unreachable"** → a real bug is silently buried. **Unacceptable.**
 
-Therefore Scovillain is built to be **sound on negatives** or to refuse. The
+Therefore Sieve is built to be **sound on negatives** or to refuse. The
 verdict is never a bare boolean; it names its own confidence, and the caller may
 only *drop* on a fully-sound refutation:
 
@@ -131,7 +102,7 @@ Two query tiers, cheap before expensive:
 
 ## Prior art
 
-The core idea is well-trodden; Scovillain does not claim a novel detector. See
+The core idea is well-trodden; Sieve does not claim a novel detector. See
 [`PRIOR_ART.md`](PRIOR_ART.md) for the full map — the short version: single-
 binary source→sink reachability is done (**Arbiter**, **PopKORN**, **angr**,
 **Joern**), multi-binary is done (**Karonte**, **Mango**), and reachability-as-
@@ -153,7 +124,7 @@ Greenfield; direction fixed by this README + [`DESIGN.md`](DESIGN.md) +
 > *refutation* comes out correct.
 
 Recovery engine is **borrowed, not rebuilt** (angr / Arbiter / Mango-DFA / the
-IDA MCP already in the environment). Scovillain owns the graph model, the query
+IDA MCP already in the environment). Sieve owns the graph model, the query
 tiers, the verdict contract, and the MCP surface.
 
 ## Scope / ethics

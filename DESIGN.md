@@ -1,7 +1,7 @@
-# Scovillain — Design
+# Sieve — Design
 
-> Scovillain is a **falsification oracle** delivered as an **MCP server**. A
-> hunting tool (Huntail) sends candidate sinks; Scovillain answers whether each
+> Sieve is a **falsification oracle** delivered as an **MCP server**. A
+> hunting tool (Verdict) sends candidate sinks; Sieve answers whether each
 > can be **refuted** (unreachable / sanitized) over a graph of one complex
 > binary. The product is the **verdict**; its defining property is that a
 > negative is **sound enough to delete a candidate on.**
@@ -38,7 +38,7 @@ Every verdict carries **evidence**:
   the caller (or a human) can decide whether to resolve them and re-ask.
 
 **Invariant:** a caller that deletes candidates only on `REFUTED` can never lose
-a true positive to Scovillain. This invariant is the whole project.
+a true positive to Sieve. This invariant is the whole project.
 
 ---
 
@@ -65,7 +65,7 @@ The oracle's value = how many candidates it can move from `REFUTED_MODULO` into
 ## 3. Architecture
 
 ```
-   caller (Huntail / LLM agent)
+   caller (Verdict / LLM agent)
         │  MCP tool calls
         ▼
    ┌─────────────────────────────────────────────┐
@@ -121,31 +121,31 @@ to this `sink`, and a `FLOW` path carrying the ingress value into
 ## 5. MCP tool surface (draft)
 
 ```
-scovillain.load(binary_path, opts?)          → session_id
+sieve.load(binary_path, opts?)          → session_id
     build IR + graph once; report node/edge counts and unresolved-dispatch total
 
-scovillain.reachable(session, source, sink)  → {verdict, evidence}
+sieve.reachable(session, source, sink)  → {verdict, evidence}
     tier-1. structural reachability. the primary false-positive filter.
 
-scovillain.flow(session, source, sink, arg)  → {verdict, evidence}
+sieve.flow(session, source, sink, arg)  → {verdict, evidence}
     tier-2. does attacker data reach sink arg unsanitized? (implies reachable)
 
-scovillain.ingress_of(session, sink)         → [ingress...]  (+ per-verdict)
+sieve.ingress_of(session, sink)         → [ingress...]  (+ per-verdict)
     which entrypoints can reach this sink at all — for triage/ranking
 
-scovillain.explain(session, verdict_id)      → path | cut | unresolved-frontier
+sieve.explain(session, verdict_id)      → path | cut | unresolved-frontier
     human/agent-readable evidence for a prior verdict
 
-scovillain.resolve_hint(session, callsite, targets)   (optional)
+sieve.resolve_hint(session, callsite, targets)   (optional)
     caller supplies indirect-call targets it knows; may upgrade
     REFUTED_MODULO → REFUTED on re-query
 ```
 
 Design notes:
-- `reachable` is the workhorse: given a candidate `(source, sink)` from Huntail,
-  return a verdict Huntail can act on.
-- Sources/sinks are supplied by the caller (Huntail knows its candidates) or
-  looked up by recipe; Scovillain does not need to own detection.
+- `reachable` is the workhorse: given a candidate `(source, sink)` from Verdict,
+  return a verdict Verdict can act on.
+- Sources/sinks are supplied by the caller (Verdict knows its candidates) or
+  looked up by recipe; Sieve does not need to own detection.
 - `resolve_hint` closes the loop: a smarter caller (or human) feeds back
   dispatch targets to shrink the unresolved frontier and unlock `REFUTED`.
 
@@ -167,7 +167,7 @@ Design notes:
 ## 7. Directory layout
 
 ```
-scovillain/
+sieve/
   ir/          schema.py            # the IR dataclasses — the contract
   frontends/   ida.py  angr.py      # emit IR; nothing downstream imports these
   graph/       build.py  store.py   # IR → multigraph; storage interface

@@ -21,7 +21,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 
-from scovillain.ir.schema import EdgeLossSite
+from sieve.ir.schema import EdgeLossSite
 
 
 class Verdict(str, Enum):

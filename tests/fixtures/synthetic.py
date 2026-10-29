@@ -9,7 +9,7 @@ falsely REFUTE it. That false REFUTED is the project-defining bug.
 
 from __future__ import annotations
 
-from scovillain.ir.schema import (
+from sieve.ir.schema import (
     CallResolution, Edge, EdgeKind, EdgeLossKind, EdgeLossSite, Ingress,
     Module, Node, NodeKind, Sink,
 )

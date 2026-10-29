@@ -8,9 +8,9 @@ edge-loss site could bridge to the sink (else it is unsound).
 
 from __future__ import annotations
 
-from scovillain.graph.store import NetworkxStore
-from scovillain.query.reach import reachable
-from scovillain.verdict.contract import Verdict
+from sieve.graph.store import NetworkxStore
+from sieve.query.reach import reachable
+from sieve.verdict.contract import Verdict
 from tests.fixtures import synthetic
 
 
@@ -78,8 +78,8 @@ def test_provably_irrelevant_loss_site_is_dropped_yielding_refuted():
 
 def test_answer_contract_rejects_refuted_with_frontier():
     import pytest
-    from scovillain.verdict.contract import Answer, Evidence, FrontierSite
-    from scovillain.ir.schema import EdgeLossSite, EdgeLossKind
+    from sieve.verdict.contract import Answer, Evidence, FrontierSite
+    from sieve.ir.schema import EdgeLossSite, EdgeLossKind
     bogus = FrontierSite(
         loss=EdgeLossSite(site=1, func=1, kind=EdgeLossKind.INDIRECT_CALL),
         score=1.0)
@@ -110,7 +110,7 @@ def test_answer_carries_the_build_anchor_it_was_derived_on():
 # is "asymmetric modulo the dispatch frontier", never a bare "unpaired".
 
 def test_pairing_odd_member_with_unresolved_escape_is_modulo_not_proven():
-    from scovillain.query.pairing import Pairing, audit_pairing
+    from sieve.query.pairing import Pairing, audit_pairing
     mod, acq, rel = synthetic.pairing_population(odd_member_escapes=True)
     rep = audit_pairing(NetworkxStore(mod), acq, rel)
     odd = [r for r in rep.rows if r.name == "OddHolder"][0]
@@ -124,7 +124,7 @@ def test_pairing_odd_member_with_unresolved_escape_is_modulo_not_proven():
 
 
 def test_pairing_odd_member_without_escape_is_proven_unpaired():
-    from scovillain.query.pairing import Pairing, audit_pairing
+    from sieve.query.pairing import Pairing, audit_pairing
     mod, acq, rel = synthetic.pairing_population(odd_member_escapes=False)
     rep = audit_pairing(NetworkxStore(mod), acq, rel)
     odd = [r for r in rep.rows if r.name == "OddHolder"][0]
@@ -135,7 +135,7 @@ def test_pairing_delegated_release_reports_the_count_mismatch():
     """The actual ahcache 9278 shape: a known path reaches a release, so this is
     NOT 'unpaired' — but two acquires against one delegated release means
     per-reference symmetry is unproven, and the row must say so."""
-    from scovillain.query.pairing import Pairing, audit_pairing
+    from sieve.query.pairing import Pairing, audit_pairing
     mod, acq, rel = synthetic.pairing_population(odd_member_escapes=False,
                                                  with_delegate=True)
     rep = audit_pairing(NetworkxStore(mod), acq, rel)
@@ -150,7 +150,7 @@ def test_pairing_never_exposes_reachability_safe_to_delete_as_a_dismissal():
     underlying reachability Answer for a proven asymmetry has
     safe_to_delete=True (no path), yet the pairing verdict is a LEAD. If someone
     'simplifies' pairing to return the Answer, this test fails."""
-    from scovillain.query.pairing import audit_pairing
+    from sieve.query.pairing import audit_pairing
     mod, acq, rel = synthetic.pairing_population(odd_member_escapes=False)
     rep = audit_pairing(NetworkxStore(mod), acq, rel)
     odd = [r for r in rep.rows if r.name == "OddHolder"][0]
@@ -164,7 +164,7 @@ def test_transfer_pairs_do_not_report_delegated_release_as_a_lead():
     in Delete' rows and buried the one real Acquire/Release asymmetry. Ownership
     transfer is the normal shape for alloc/free, so it is not a lead there — and
     it still is for a local discipline like Acquire/Release."""
-    from scovillain.query.pairing import PairKind, Pairing, audit_pairing
+    from sieve.query.pairing import PairKind, Pairing, audit_pairing
     mod, acq, rel = synthetic.pairing_population(odd_member_escapes=False,
                                                  with_delegate=True)
     st = NetworkxStore(mod)
@@ -183,7 +183,7 @@ def test_callerless_holder_is_never_proven_unpaired():
     one callback and releases in another. No forward query from inside such a
     function can see that pair, so PROVEN there would be a false negative of the
     same family as a false REFUTED."""
-    from scovillain.query.pairing import Pairing, audit_pairing
+    from sieve.query.pairing import Pairing, audit_pairing
     mod, acq, rel = synthetic.pairing_population(odd_member_escapes=False,
                                                  odd_callerless=True)
     rep = audit_pairing(NetworkxStore(mod), acq, rel)
@@ -199,7 +199,7 @@ def test_callerless_holder_is_never_proven_unpaired():
 # pointer fields. Both teeth are tested here.
 
 def test_constant_field_cannot_support_a_claim():
-    from scovillain.verdict.discriminator import FieldKind, FieldPopulation, require_discriminating
+    from sieve.verdict.discriminator import FieldKind, FieldPopulation, require_discriminating
     pop = FieldPopulation(name="+0x1f", values=(1,) * 38,
                           members=tuple("Feature_%d" % i for i in range(38)))
     assert pop.kind is FieldKind.CONSTANT and not pop.discriminates
@@ -212,14 +212,14 @@ def test_constant_field_cannot_support_a_claim():
 def test_identity_like_variance_is_not_discriminating_power():
     """Pointer/id fields differ per member by construction; variance alone is
     not state. This is the second-order version of the same mistake."""
-    from scovillain.verdict.discriminator import FieldKind, FieldPopulation, require_discriminating
+    from sieve.verdict.discriminator import FieldKind, FieldPopulation, require_discriminating
     pop = FieldPopulation(name="+0x18", values=tuple(0x140000000 + i * 8 for i in range(38)))
     assert pop.kind is FieldKind.IDENTITY and not pop.discriminates
     assert require_discriminating(pop) is not None
 
 
 def test_enum_field_names_the_outlier_and_nothing_more():
-    from scovillain.verdict.discriminator import FieldKind, FieldPopulation, require_discriminating
+    from sieve.verdict.discriminator import FieldKind, FieldPopulation, require_discriminating
     vals = (3,) * 37 + (0,)
     names = tuple("Feature_%d" % i for i in range(37)) + ("Feature_Agentic",)
     pop = FieldPopulation(name="+0x1c", values=vals, members=names)
@@ -231,7 +231,7 @@ def test_enum_field_names_the_outlier_and_nothing_more():
 def test_partial_application_requires_the_field_to_vary():
     """Defense in depth: the shape label itself goes through the guard, so a
     uniform population can never be reported as 'symmetric except a minority'."""
-    from scovillain.query.pairing import audit_pairing
+    from sieve.query.pairing import audit_pairing
     mod, acq, rel = synthetic.pairing_population(odd_member_escapes=True)
     rep = audit_pairing(NetworkxStore(mod), acq, rel)
     assert rep.pairing_field.discriminates and rep.partial_application

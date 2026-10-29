@@ -1,4 +1,4 @@
-# Prior Art — where Scovillain sits
+# Prior Art — where Sieve sits
 
 > Purpose of this doc: an honest map of what already exists, so the project's
 > direction does not overclaim novelty. **The core concept — binary → graph →
@@ -11,7 +11,7 @@
 
 Every pillar of the original pitch already has a well-cited tool:
 
-| Scovillain claim                         | Already done by            |
+| Sieve claim                         | Already done by            |
 |------------------------------------------|----------------------------|
 | Multi-binary graph / cross-binary edges  | **Karonte, SaTC, Operation Mango** |
 | Reachability used as a *falsifier*/pruner| **RAPTOR, PopKORN**        |
@@ -54,7 +54,7 @@ engineering/UX bet, not a research contribution. See "White space" below.
 - **Operation Mango** (USENIX Security 2024) — current SOTA for scalable
   taint-style reachability in **multi-binary firmware services**; open source;
   finds 56 bugs SaTC misses on 7 firmwares. **The closest living relative to
-  Scovillain — study this hardest before building.**
+  Sieve — study this hardest before building.**
   <https://www.usenix.org/conference/usenixsecurity24/presentation/gibbs>
   (PDF: <https://www.usenix.org/system/files/usenixsecurity24-gibbs.pdf>)
 
@@ -67,7 +67,7 @@ engineering/UX bet, not a research contribution. See "White space" below.
   <https://docs.joern.io/code-property-graph/> ·
   <https://en.wikipedia.org/wiki/Code_property_graph>
 
-### 4. Recovery engines Scovillain would build on (not compete with)
+### 4. Recovery engines Sieve would build on (not compete with)
 
 - **angr** — recovers ICFG (`CFGFast`) and data-dependence graphs (`DDG`) from
   binaries; reference for CFG/DFG recovery and backward slicing.
@@ -104,13 +104,13 @@ Not the idea — the **form**. Both are engineering bets, not research novelty:
 - **Research contribution** → bar is high and mostly taken; needs a sharp narrow
   claim measured against Mango on the same firmware set. Do **not** rebuild
   Karonte.
-- **Practical personal tool** (like the earlier Huntail) → novelty is
+- **Practical personal tool** (like the earlier Verdict) → novelty is
   irrelevant, usefulness is the only bar. Then build the query/agent layer *on
   top of* an existing substrate (angr / Operation Mango / Joern) instead of
   re-implementing CFG recovery and cross-binary taint.
 
 **Next action:** read the Operation Mango paper + repo. If it already does ~80%
-of the target, Scovillain becomes "a query/agent front-end to Mango's graph" — a
+of the target, Sieve becomes "a query/agent front-end to Mango's graph" — a
 smaller, honest project — rather than "a new multi-binary reachability tool."
 
 ---

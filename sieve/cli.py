@@ -1,8 +1,8 @@
 """Command line entry — the one place allowed to import both a frontend and the
 queries (the IR boundary says nothing *downstream* imports a frontend).
 
-    python -m scovillain.cli frontier <image.sys> [image.pdb] <source> <sink>
-    python -m scovillain.cli pairs    <image.sys> [image.pdb] [--all]
+    python -m sieve.cli frontier <image.sys> [image.pdb] <source> <sink>
+    python -m sieve.cli pairs    <image.sys> [image.pdb] [--all]
 """
 
 from __future__ import annotations
@@ -10,10 +10,10 @@ from __future__ import annotations
 import os
 import sys
 
-from scovillain.frontends.pe_capstone import by_name, load_module, summarize
-from scovillain.graph.store import NetworkxStore
-from scovillain.query.pairing import sweep
-from scovillain.query.reach import reachable
+from sieve.frontends.pe_capstone import by_name, load_module, summarize
+from sieve.graph.store import NetworkxStore
+from sieve.query.pairing import sweep
+from sieve.query.reach import reachable
 
 
 def _resolve(mod, tok: str) -> int:

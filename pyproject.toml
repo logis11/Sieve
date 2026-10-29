@@ -1,5 +1,5 @@
 [project]
-name = "scovillain"
+name = "sieve"
 version = "0.0.1"
 description = "A frontier-first falsification oracle for binary vulnerability hunting"
 requires-python = ">=3.10"

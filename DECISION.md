@@ -1,4 +1,4 @@
-# Scovillain — Direction Decision
+# Sieve — Direction Decision
 
 > Status: direction fixed **2026-09-24**. This supersedes the earlier
 > "shelve it — overlaps with existing tools" call. Read after
@@ -34,7 +34,7 @@ Two logic errors fed the shelving:
 
 ## 2. The direction (one sentence)
 
-**Scovillain is the vuln-harness's absence-gate oracle.** Its one job: turn
+**Sieve is the vuln-harness's absence-gate oracle.** Its one job: turn
 *"cannot prove absence because of unresolved indirect dispatch"* into either a
 trustworthy `REFUTED` or an honestly enumerated `MODULO(K)`. Not a scanner, not
 multi-binary, not a research claim measured against Mango. Firmware and
@@ -112,7 +112,7 @@ The harness. The acceptance test is a **live block**, not a toy fixture:
   arm-independent drain-window re-entry), whose absence-gate a human analyst
   could not clear inside a session because it is gated on **39 unresolved
   function-pointer stores**.
-- Success: Scovillain reproduces that 39-site frontier, ranks it, and returns
+- Success: Sieve reproduces that 39-site frontier, ranks it, and returns
   `MODULO(39)` (or `REFUTED` if it can resolve them) — matching what the analyst
   derived by hand.
 
@@ -168,7 +168,7 @@ Nothing in the tree contradicts this any more; the old recommendation is kept
 below for provenance.
 
 (superseded) Recommendation: **captive-first** — the harness is the
-only proven customer, so wire Scovillain as an MCP tool the nightrun agent calls
+only proven customer, so wire Sieve as an MCP tool the nightrun agent calls
 and extract value fast, while keeping the **IR boundary clean** so it can be
 lifted out later. Designing it as "a standalone tool the harness happens to use
 first" spends early time on IR generality and delays first value. This fork

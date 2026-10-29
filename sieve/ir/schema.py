@@ -1,4 +1,4 @@
-"""Scovillain IR — the contract.
+"""Sieve IR — the contract.
 
 This is the keystone (DESIGN.md §4). Every frontend (IDA-MCP, angr, Ghidra)
 emits *this* and nothing downstream imports a frontend. The IR is deliberately
@@ -9,7 +9,7 @@ The one non-obvious thing this schema does, and the reason the whole project
 exists: it gives **edge-loss sources** first-class representation (`EdgeLossSite`),
 separate from the edges that *are* known. Structural reachability over known
 edges is an under-approximation; the set of places where an edge *might* be
-missing is what Scovillain enumerates and ranks. The soundness invariant
+missing is what Sieve enumerates and ranks. The soundness invariant
 (DECISION.md §6) is that this set counts **every** class of edge loss —
 indirect calls, code-pointer escapes / registered kernel callbacks, tail calls,
 and exception/unwind dispatch — not just indirect calls. Miss one class and an
